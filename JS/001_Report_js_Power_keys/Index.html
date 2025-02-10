@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Sales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .sales-box {
+            background: #d6d6d6;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            font-size: 24px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+        }
+        .loading {
+            font-size: 18px;
+            color: gray;
+        }
+        .refresh-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            font-size: 16px;
+            border: none;
+            background-color: #146884;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .refresh-btn:hover {
+            background-color: #0f4f60;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Today's Total Sales</h2>
+    <div class="sales-box">
+        <span id="salesAmount" class="loading">Loading...</span>
+    </div>
+    <br>
+    <button class="refresh-btn" onclick="fetchSales()">Refresh</button>
+
+    <script>
+        async function fetchSales() {
+            const salesElement = document.getElementById("salesAmount");
+            salesElement.innerText = "Loading...";
+
+            try {
+                const response = await fetch("fetch_sales.php");
+                const data = await response.json();
+                salesElement.innerText = `₹ ${data.total_sales}`;
+            } catch (error) {
+                salesElement.innerText = "Error fetching data";
+                console.error("Error fetching sales data:", error);
+            }
+        }
+
+        fetchSales(); // Call on page load
+    </script>
+
+</body>
+</html>

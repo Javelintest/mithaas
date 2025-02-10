@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page</title>
+  <style>
+    /* Default styles for larger screens */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .content {
+      padding: 20px;
+      background-color: lightblue;
+      text-align: center;
+    }
+    
+    .mobile-only {
+      display: none;
+    }
+    
+    /* Media query for devices with a width of 600px or less */
+    @media only screen and (max-width: 600px) {
+      /* Change styles for mobile screens */
+      .content {
+        background-color: lightgreen;
+        font-size: 18px;
+      }
+
+      .mobile-only {
+        display: block;
+        background-color: yellow;
+        padding: 10px;
+        margin-top: 20px;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p class="desktop-only">This content is visible on larger screens.</p>
+    <p class="mobile-only">This content is only visible on mobile devices.</p>
+  </div>
+</body>
+</html>

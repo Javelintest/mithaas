@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected Content</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+</head>
+<body>
+  <h1>Welcome to the protected content page!</h1>
+  <button onclick="logout()">Logout</button>
+  
+
+  <script>
+    // Your Firebase configuration object
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEjkpdAy70wpbUXhm2tfojHMoJMkH7j7k",
+      authDomain: "javelin-5b0cc.firebaseapp.com",
+      projectId: "javelin-5b0cc",
+      storageBucket: "javelin-5b0cc.appspot.com",
+      messagingSenderId: "971984810397",
+      appId: "1:971984810397:web:82a2fce6d25f8b74c6ff74",
+      measurementId: "G-KZ51RJWCDL"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.getAuth();
+
+    // Check if the user is authenticated
+    firebase.onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        // Redirect to login page if not authenticated
+        window.location.href = "Login Area\login.auth.firbase\login.html";
+      }
+    });
+
+    // Logout function
+    function logout() {
+      firebase.signOut(auth).then(() => {
+        window.location.href = "Login Area\login.auth.firbase\login.html"; // Redirect to login page
+      }).catch((error) => {
+        console.error("Logout Error: ", error);
+      });
+    }
+  </script>
+  <script src="Login Area/login.auth.firbase/firebaseauth.js"></script>
+  <script src="Login Area/login.auth.firbase/homepage.js"></script>
+</body>
+
+</html>

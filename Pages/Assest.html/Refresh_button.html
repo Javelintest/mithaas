@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Button</title>
+    <style>
+        /* Style the button */
+        .refresh-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        .refresh-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Refresh Button -->
+    <button class="refresh-button" onclick="refreshPage()">Refresh Page</button>
+
+    <script>
+        // Function to refresh the page
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>

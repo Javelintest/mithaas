@@ -56,7 +56,7 @@ body.dark{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+    background: #0b1ac1;
 }
 
 body.dark::-webkit-scrollbar-thumb:hover,
@@ -111,9 +111,12 @@ nav .menu-items{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto;
+    overflow-X: hidden;
 }
 .menu-items li{
     list-style: none;
+    
 }
 .menu-items li a{
     display: flex;
@@ -121,6 +124,7 @@ nav .menu-items{
     height: 50px;
     text-decoration: none;
     position: relative;
+    
 }
 .nav-links li a:hover:before{
     content: "";
@@ -226,7 +230,7 @@ nav.close ~ .dashboard{
     justify-content: space-between;
     align-items: center;
     padding: 10px 14px;
-    background-color:rgb(53, 9, 85);
+    background-color:rgb(188, 205, 244);
     transition: var(--tran-05);
     z-index: 10;
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--=== Coding by Suraj | www.astraz.in === -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Button.css">
+    <link rel="stylesheet" href="CSS/Asset/Button_Assest.CSS">
+    <link rel="stylesheet" href="CSS/user.css">
+
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-4o3d/R8r32p5e4eHHKqvJq5vJq5vGzAF5E0p0M0M5jlsdB7EkpQ5V9Xg5spD8RFjWvIphq/sB5G+0k5bPSz8Ic3Ikg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    -->
+        <title style="font-family: ';">Javelin</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="Images\Logo.svg" alt="">
+            </div>
+            <span class="logo_name">Javelin</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Dahsboard</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">User</span>
+                    </a></li>
+                <li>
+                    <div class="dropdown-container">
+                        <a href="#"><i class="uil uil-chart"></i>
+                            </i>
+                            <span class="link-name"><button class="dropbtn">Analytics</button></span>
+                        </a>
+                        <div class="dropdown-content">
+
+                            <a href="#section1" class="button-85" role="button" style="color: antiquewhite;">Live Sale
+                                Track</a>
+                            <div class="dropdown-container">
+                                <a href="#section2" class="btn" id="btn">Sales Analysis<i class="bx bx-chevron-down"
+                                        id="arrow"></i></a>
+                                <div class="dropdown" id="dropdown">
+                                    <a href="#create">
+                                        <i class="bx bx-plus-circle"></i>
+                                        Create New
+                                    </a>
+                                    <a href="#draft">
+                                        <i class="bx bx-book"></i>
+                                        All Drafts
+                                    </a>
+                                    <a href="#move">
+                                        <i class="bx bx-folder"></i>
+                                        Move To
+                                    </a>
+                                    <a href="#profile">
+                                        <i class="bx bx-user"></i>
+                                        Profile Settings
+                                    </a>
+                                    <a href="#notification">
+                                        <i class="bx bx-bell"></i>
+                                        Notification
+                                    </a>
+                                    <a href="#settings">
+                                        <i class="bx bx-cog"></i>
+                                        Settings
+                                    </a>
+                                </div>
+                                <a href="#section3">Realise Reports</a>
+                                <a href="#section4">Purchase Analysis</a>
+                                <a href="#section5">Ecommerce Dash</a>
+                            </div>
+                        </div>
+                </li>
+                <li><a href="Pages\Assest.html\buttons.html">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Like</span>
+                    </a></li>
+                <li><a href="Comment.html">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">Growth Report</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-share"></i>
+                        <span class="link-name">Share</span>
+                    </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <button class="btn btn-danger1" onclick="logout()">Logout</button>
+                    </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+
+                <a href="">
+                <button class="btn btn-success1">Live Sales DSR</button>
+                </a>
+                <a href="">
+                <button class="btn btn-info1">Purchase</button>
+                </a>
+                
+            
+            
+                <button class="refresh-button-a" onclick="refreshPage()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/></svg></button>
+
+            <!-- user profile menu -->
+            <span id="user" class="message">Hello, < email-id ></Email-id></span>
+            <div class="profile-container-a" onclick="toggleDropdown()">
+                <img src="https://i.pravatar.cc/50" alt="User" class="profile-icon-a">
+                <div class="dropdown-menu-a" id="dropdownMenu-a">
+                    <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> User Info</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+            <!-- profile ends here -->
+        </div>
+
+
+        <div class="dash-content" style="padding-top: 0%;">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text" style="padding-top: 0%;">Live Sales</span>
+                </div>
+
+
+                <div id="reportContainer" class="dds__d-none" style="height:804px; overflow-y:hidden">
+                    <iframe id="reportFrame" onload="powerBiLoaded()" frameborder="0" seamless="seamless"
+                        class="viewer pbi-frame" style=" width: 100%; height: 840px;"
+                        src="https://app.powerbi.com/reportEmbed?reportId=d51a0a55-36fe-4cc8-89bf-5e7527aa346c&autoAuth=true&ctid=4d26d852-f156-4a0c-90c8-ab5c3182e6d5">
+                    </iframe>
+                </div>
+                <div id="content">
+                    <!-- Content will be loaded here -->
+                    <h1>Mithaas Overview Reports</h1>
+                    <p>Click on the links above to load content dynamically.</p>
+                </div>
+
+
+    </section>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/Button.js"></script>
+    <script src="JS/Power_Api.js"></script>
+    <script src="firebaseauth.js"></script>
+    <script src="Index.js"></script>
+    <script src="JS/User.js"></script>
+    
+
+    <script>
+        // Function to refresh the page
+        function refreshPage() {
+            location.reload();
+        }
+
+        // Sum Menu Button
+        const dropdownBtn = document.getElementById("btn");
+        const dropdownMenu = document.getElementById("dropdown");
+        const toggleArrow = document.getElementById("arrow");
+
+        // Toggle dropdown function
+        const toggleDropdown = function () {
+            dropdownMenu.classList.toggle("show");
+            toggleArrow.classList.toggle("arrow");
+        };
+
+        // Toggle dropdown open/close when dropdown button is clicked
+        dropdownBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        // Close dropdown when dom element is clicked
+        document.documentElement.addEventListener("click", function () {
+            if (dropdownMenu.classList.contains("show")) {
+                toggleDropdown();
+            }
+        });
+    </script>
+
+    <!-- FIREBASE AUTH CONNECTIONS -->
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+            <script src="firebase.js"></script>
+            <script src="JS/home.js"></script>
+    <!-- FIREBASE AUTH CONNECTION ENDS HERE -->
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>

@@ -1,59 +1,38 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import {getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+document.getElementById("loginForm").addEventListener("submit",(event)=>{
+    event.preventDefault()
+})
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAEjkpdAy70wpbUXhm2tfojHMoJMkH7j7k",
-      authDomain: "javelin-5b0cc.firebaseapp.com",
-      projectId: "javelin-5b0cc",
-      storageBucket: "javelin-5b0cc.appspot.com",
-      messagingSenderId: "971984810397",
-      appId: "1:971984810397:web:82a2fce6d25f8b74c6ff74",
-      measurementId: "G-KZ51RJWCDL"
-  };
- 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
-  const auth=getAuth();
-  const db=getFirestore();
-
-  onAuthStateChanged(auth, (user)=>{
-    const loggedInUserId=localStorage.getItem('loggedInUserId');
-    if(loggedInUserId){
-        console.log(user);
-        const docRef = doc(db, "users", loggedInUserId);
-        getDoc(docRef)
-        .then((docSnap)=>{
-            if(docSnap.exists()){
-                const userData=docSnap.data();
-                document.getElementById('loggedUserFName').innerText=userData.firstName;
-                document.getElementById('loggedUserEmail').innerText=userData.email;
-                document.getElementById('loggedUserLName').innerText=userData.lastName;
-
-            }
-            else{
-                console.log("no document found matching id")
-            }
-        })
-        .catch((error)=>{
-            console.log("Error getting document");
-        })
+firebase.auth().onAuthStateChanged((user)=>{
+    if(user){
+        location.replace("welcome.html")
     }
-    else{
-        console.log("User Id not Found in Local storage")
-    }
-  })
+})
 
-  const logoutButton=document.getElementById('logout');
-
-  logoutButton.addEventListener('click',()=>{
-    localStorage.removeItem('loggedInUserId');
-    signOut(auth)
-    .then(()=>{
-        window.location.href='login.html';
-    })
+function login(){
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .catch((error)=>{
-        console.error('Error Signing out:', error);
+        document.getElementById("error").innerHTML = error.message
     })
-  })
+}
+
+function signUp(){
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .catch((error) => {
+        document.getElementById("error").innerHTML = error.message
+    });
+}
+
+function forgotPass(){
+    const email = document.getElementById("email").value
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+        alert("Reset link sent to your email id")
+    })
+    .catch((error) => {
+        document.getElementById("error").innerHTML = error.message
+    });
+}

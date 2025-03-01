@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
     <link rel="stylesheet" href="CSS/Button.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         .navbar {
@@ -107,13 +108,69 @@
     </div>
     
     <center>
-        <div style="margin:100px">
+        <div style="margin:10px">
             <span id="user" class="message">Hello, < email-id ></span>
             <div class="success"><span>Welcome to Javelin, You are successfully logged in!!!</span></div><br/>
             <button class="btn btn-danger" onclick="logout()">Logout</button>
             <button class="BUTTON01"><a href="home.html">Go To Your Dashboard</a></button>
         </div>
     </center>
+
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Reports</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- Report Card -->
+            <a href="home.html" class="block p-5 bg-white shadow-lg rounded-xl hover:shadow-xl transition">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-blue-100 text-blue-500 rounded-full">
+                        📊
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Sales Report</h3>
+                        <p class="text-sm text-gray-500">View daily and monthly sales data.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block p-5 bg-white shadow-lg rounded-xl hover:shadow-xl transition">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-green-100 text-green-500 rounded-full">
+                        📦
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Orders Report</h3>
+                        <p class="text-sm text-gray-500">Track order statuses and trends.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block p-5 bg-white shadow-lg rounded-xl hover:shadow-xl transition">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-red-100 text-red-500 rounded-full">
+                        💰
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Revenue Report</h3>
+                        <p class="text-sm text-gray-500">Monitor your earnings over time.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block p-5 bg-white shadow-lg rounded-xl hover:shadow-xl transition">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-yellow-100 text-yellow-500 rounded-full">
+                        👥
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Customer Report</h3>
+                        <p class="text-sm text-gray-500">Analyze customer behavior.</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
     
     <script>
         function toggleDropdown() {

@@ -29,6 +29,7 @@
 body{
     min-height: 100vh;
     background-color: var(--primary-color);
+   
 }
 body.dark{
     --primary-color: #3A3B3C;
@@ -56,7 +57,7 @@ body.dark{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b1ac1;
+    background: #52567c;
 }
 
 body.dark::-webkit-scrollbar-thumb:hover,
@@ -230,10 +231,10 @@ nav.close ~ .dashboard{
     justify-content: space-between;
     align-items: center;
     padding: 10px 14px;
-    background-color:rgb(188, 205, 244);
+    background-color:rgb(255, 255, 251);
     transition: var(--tran-05);
     z-index: 10;
-
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     /* rgb(23, 0, 116)  */
     
 }
